@@ -1,0 +1,14 @@
+{
+  "name": "ictu/ictuwp-plugin-toolkit-taal",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0",
+  "description": "Plugin voor functionaliteit van de 'toolkit taal'-subsite",
+  "homepage": "https://toolkittaal.gebruikercentraal.nl",
+  "authors": [
+    {
+      "name": "Paul van Buuren",
+      "email": "paul@wbvb.nl",
+      "homepage": "https://github.com/ICTU/ictuwp-plugin-toolkit-taal"
+    }
+  ]
+}
