@@ -12,13 +12,76 @@
  * Set TT_EXAMPLE_TYPE_TAX taxonomy labels
  * Set TT_EXAMPLE_TYPE_TAX taxonomy arguments
  * Register TT_EXAMPLE_TYPE_TAX taxonomy
- * 
+ *
  * Not used yet:
- * public function fn_ictu_example_get_post_example_type_terms() - Retreive Voorbeeld Type terms with custom field data for Post
+ * public function fn_ictu_example_get_post_example_type_terms() - Retreive voorbeeld Type terms with custom field data for Post
  * ----------------------------------------------------- */
 
+if ( ! post_type_exists( TT_EXAMPLE_CPT ) ) {
 
-if ( ! taxonomy_exists( TT_EXAMPLE_TYPE_TAX ) ) {
+	$slug_of_posttype = TT_EXAMPLE_CPT;
+	$args             = array(
+		'label'       => esc_html__( TT_EXAMPLE_CPT, 'gctheme' ),
+		'description' => '',
+		'labels'      => array(
+			'name'                  => esc_html_x( 'Voorbeelden', 'post type definition', 'gctheme' ),
+			'singular_name'         => esc_html_x( 'Voorbeeld', 'post type definition', 'gctheme' ),
+			'menu_name'             => esc_html_x( 'Voorbeelden', 'post type definition', 'gctheme' ),
+			'name_admin_bar'        => esc_html_x( 'Voorbeeld', 'post type definition', 'gctheme' ),
+			'archives'              => esc_html_x( 'Overzicht voorbeelden', 'post type definition', 'gctheme' ),
+			'attributes'            => esc_html_x( 'Eigenschappen voorbeeld', 'post type definition', 'gctheme' ),
+			'parent_item_colon'     => esc_html_x( 'Parent Map:', 'post type definition', 'gctheme' ),
+			'all_items'             => esc_html_x( 'Alle voorbeelden', 'post type definition', 'gctheme' ),
+			'add_new_item'          => esc_html_x( 'Voorbeeld toevoegen', 'post type definition', 'gctheme' ),
+			'add_new'               => esc_html_x( 'Toevoegen', 'post type definition', 'gctheme' ),
+			'new_item'              => esc_html_x( 'Nieuw voorbeeld', 'post type definition', 'gctheme' ),
+			'edit_item'             => esc_html_x( 'Bewerk voorbeeld', 'post type definition', 'gctheme' ),
+			'update_item'           => esc_html_x( 'Update voorbeeld', 'post type definition', 'gctheme' ),
+			'view_item'             => esc_html_x( 'Bekijk voorbeeld', 'post type definition', 'gctheme' ),
+			'view_items'            => esc_html_x( 'Bekijk voorbeelden', 'post type definition', 'gctheme' ),
+			'search_items'          => esc_html_x( 'Zoek voorbeeld', 'post type definition', 'gctheme' ),
+			'not_found'             => esc_html_x( 'Not found', 'post type definition', 'gctheme' ),
+			'not_found_in_trash'    => esc_html_x( 'Not found in Trash', 'post type definition', 'gctheme' ),
+			'featured_image'        => esc_html_x( 'Featured Image', 'post type definition', 'gctheme' ),
+			'set_featured_image'    => esc_html_x( 'Set featured image', 'post type definition', 'gctheme' ),
+			'remove_featured_image' => esc_html_x( 'Remove featured image', 'post type definition', 'gctheme' ),
+			'use_featured_image'    => esc_html_x( 'Use as featured image', 'post type definition', 'gctheme' ),
+			'insert_into_item'      => esc_html_x( 'Insert into Map', 'post type definition', 'gctheme' ),
+			'uploaded_to_this_item' => esc_html_x( 'Uploaded to this voorbeeld', 'post type definition', 'gctheme' ),
+			'items_list'            => esc_html_x( 'Map list', 'post type definition', 'gctheme' ),
+			'items_list_navigation' => esc_html_x( 'Maps list navigation', 'post type definition', 'gctheme' ),
+			'filter_items_list'     => esc_html_x( 'Filter voorbeeld list', 'post type definition', 'gctheme' ),
+		),
+
+		'show_in_rest'        => true,
+		'supports'            => array(
+			'title',
+			'editor',
+			'author',
+			'thumbnail',
+			'excerpt',
+			'custom-fields',
+			'revisions',
+		),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_admin_bar'   => true,
+		'show_in_nav_menus'   => true,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'rewrite'             => array( 'slug' => $slug_of_posttype ),
+		'capability_type'     => 'post'
+	);
+
+	register_post_type( TT_EXAMPLE_CPT, $args );
+}
+
+
+if ( ! taxonomy_exists( TT_EXAMPLE_TYPE_TAX ) && post_type_exists( TT_EXAMPLE_CPT ) ) {
 
 	// [1] Voorbeeld Type Taxonomy Labels
 	$example_type_tax_labels = [
@@ -40,9 +103,9 @@ if ( ! taxonomy_exists( TT_EXAMPLE_TYPE_TAX ) ) {
 		'items_list_navigation'      => _x( 'Navigatie door voorbeeld-type lijst', 'Custom taxonomy labels definition', 'gctheme' ),
 		'items_list'                 => _x( 'Voorbeeld-type lijst', 'Custom taxonomy labels definition', 'gctheme' ),
 		'item_link'                  => _x( 'Voorbeeld-type Link', 'Custom taxonomy labels definition', 'gctheme' ),
-		'item_link_description'      => _x( 'Een link naar een Voorbeeld-type', 'Custom taxonomy labels definition', 'gctheme' ),
+		'item_link_description'      => _x( 'Een link naar een voorbeeld-type', 'Custom taxonomy labels definition', 'gctheme' ),
 		'menu_name'                  => _x( 'Voorbeeld-types', 'Custom taxonomy labels definition', 'gctheme' ),
-		'back_to_items'              => _x( 'Terug naar Voorbeeld-types', 'Custom taxonomy labels definition', 'gctheme' ),
+		'back_to_items'              => _x( 'Terug naar voorbeeld-types', 'Custom taxonomy labels definition', 'gctheme' ),
 		'not_found_in_trash'         => _x( 'Geen voorbeeld-types gevonden in de prullenbak', 'Custom taxonomy labels definition', 'gctheme' ),
 		'featured_image'             => _x( 'Uitgelichte afbeelding', 'Custom taxonomy labels definition', 'gctheme' ),
 		'archives'                   => _x( 'Voorbeeld-type overzicht', 'Custom taxonomy labels definition', 'gctheme' ),
@@ -57,7 +120,7 @@ if ( ! taxonomy_exists( TT_EXAMPLE_TYPE_TAX ) ) {
 	$example_type_tax_args = [
 		"labels"             => $example_type_tax_labels,
 		"label"              => _x( 'Voorbeeld-types', 'Custom taxonomy arguments definition', 'gctheme' ),
-		"description"        => _x( 'Type Voorbeelden uit de Toolkit Taal van Gebruiker Centraal', 'Custom taxonomy arguments definition', 'gctheme' ),
+		"description"        => _x( 'Type voorbeelden uit de Toolkit Taal van Gebruiker Centraal', 'Custom taxonomy arguments definition', 'gctheme' ),
 		"hierarchical"       => true,
 		"public"             => true,
 		"show_ui"            => true,
