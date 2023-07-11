@@ -57,7 +57,6 @@ if ( ! post_type_exists( TT_EXAMPLE_CPT ) ) {
 		'supports'            => array(
 			'title',
 			'editor',
-			'author',
 			'thumbnail',
 			'excerpt',
 			'custom-fields',
