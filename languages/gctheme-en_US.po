@@ -1,0 +1,177 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ICTU / Gebruiker Centraal / Toolkit Taal\n"
+"POT-Creation-Date: 2023-07-11 11:17+0200\n"
+"PO-Revision-Date: 2023-07-11 11:17+0200\n"
+"Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
+"Language-Team: Paul van Buuren <poedit@wbvb.nl>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ictuwp-plugin-toolkit-taal.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: ictuwp-plugin-toolkit-taal.php:328
+msgctxt "label page template"
+msgid "[TT] alle voorbeeld-types"
+msgstr "[TT] all example types"
+
+#: ictuwp-plugin-toolkit-taal.php:329
+msgctxt "label page template"
+msgid "[TT] voorbeeld-type"
+msgstr "[TT] example type"
+
+#: includes/register-voorbeeld_type-taxonomy.php:25
+#: includes/register-voorbeeld_type-taxonomy.php:26
+msgctxt "Custom taxonomy labels definition"
+msgid "Voorbeeld-type"
+msgstr "Example type"
+
+#: includes/register-voorbeeld_type-taxonomy.php:27
+msgctxt "Custom taxonomy labels definition"
+msgid "Zoek voorbeeld-types"
+msgstr "Find example types"
+
+#: includes/register-voorbeeld_type-taxonomy.php:28
+msgctxt "Custom taxonomy labels definition"
+msgid "Populaire voorbeeld-types"
+msgstr "Popular example types"
+
+#: includes/register-voorbeeld_type-taxonomy.php:29
+msgctxt "Custom taxonomy labels definition"
+msgid "Alle voorbeeld-types"
+msgstr "All example types"
+
+#: includes/register-voorbeeld_type-taxonomy.php:30
+msgctxt "Custom taxonomy labels definition"
+msgid "Bewerk voorbeeld-type"
+msgstr "Edit example type"
+
+#: includes/register-voorbeeld_type-taxonomy.php:31
+msgctxt "Custom taxonomy labels definition"
+msgid "Bekijk voorbeeld-type"
+msgstr "View example type"
+
+#: includes/register-voorbeeld_type-taxonomy.php:32
+msgctxt "Custom taxonomy labels definition"
+msgid "Voorbeeld-type bijwerken"
+msgstr "Update example types"
+
+#: includes/register-voorbeeld_type-taxonomy.php:33
+msgctxt "Custom taxonomy labels definition"
+msgid "Voeg nieuw voorbeeld-type toe"
+msgstr "Add new example type"
+
+#: includes/register-voorbeeld_type-taxonomy.php:34
+msgctxt "Custom taxonomy labels definition"
+msgid "Nieuwe voorbeeld-type"
+msgstr "New example type"
+
+#: includes/register-voorbeeld_type-taxonomy.php:35
+msgctxt "Custom taxonomy labels definition"
+msgid "Kommagescheiden voorbeeld-types"
+msgstr "Comma-separated example types"
+
+#: includes/register-voorbeeld_type-taxonomy.php:36
+msgctxt "Custom taxonomy labels definition"
+msgid "Voorbeeld-types toevoegen of verwijderen"
+msgstr "Add or remove example type"
+
+#: includes/register-voorbeeld_type-taxonomy.php:37
+msgctxt "Custom taxonomy labels definition"
+msgid "Kies uit de meest-gekozen voorbeeld-types"
+msgstr "Choose from the most-chosen example type"
+
+#: includes/register-voorbeeld_type-taxonomy.php:38
+#: includes/register-voorbeeld_type-taxonomy.php:39
+msgctxt "Custom taxonomy labels definition"
+msgid "Geen voorbeeld-types gevonden"
+msgstr "No example type found"
+
+#: includes/register-voorbeeld_type-taxonomy.php:40
+msgctxt "Custom taxonomy labels definition"
+msgid "Navigatie door voorbeeld-type lijst"
+msgstr "Navigation by example-type list"
+
+#: includes/register-voorbeeld_type-taxonomy.php:41
+msgctxt "Custom taxonomy labels definition"
+msgid "Voorbeeld-type lijst"
+msgstr "Example types list"
+
+#: includes/register-voorbeeld_type-taxonomy.php:42
+msgctxt "Custom taxonomy labels definition"
+msgid "Voorbeeld-type Link"
+msgstr "Example type Link"
+
+#: includes/register-voorbeeld_type-taxonomy.php:43
+msgctxt "Custom taxonomy labels definition"
+msgid "Een link naar een Voorbeeld-type"
+msgstr "A link to a example type"
+
+#: includes/register-voorbeeld_type-taxonomy.php:44
+msgctxt "Custom taxonomy labels definition"
+msgid "Voorbeeld-types"
+msgstr "Example types"
+
+#: includes/register-voorbeeld_type-taxonomy.php:45
+msgctxt "Custom taxonomy labels definition"
+msgid "Terug naar Voorbeeld-types"
+msgstr "Back to example types"
+
+#: includes/register-voorbeeld_type-taxonomy.php:46
+msgctxt "Custom taxonomy labels definition"
+msgid "Geen voorbeeld-types gevonden in de prullenbak"
+msgstr "No example types found in the trash"
+
+#: includes/register-voorbeeld_type-taxonomy.php:47
+msgctxt "Custom taxonomy labels definition"
+msgid "Uitgelichte afbeelding"
+msgstr "Featured image"
+
+#: includes/register-voorbeeld_type-taxonomy.php:48
+msgctxt "Custom taxonomy labels definition"
+msgid "Voorbeeld-type overzicht"
+msgstr "Example type overview"
+
+#: includes/register-voorbeeld_type-taxonomy.php:59
+msgctxt "Custom taxonomy arguments definition"
+msgid "Voorbeeld-types"
+msgstr "Example types"
+
+#: includes/register-voorbeeld_type-taxonomy.php:60
+msgctxt "Custom taxonomy arguments definition"
+msgid "Type Voorbeelden uit de Toolkit Taal van Gebruiker Centraal"
+msgstr "Example types from the User Needs First Language Toolkit"
+
+#. Plugin Name of the plugin/theme
+msgid "ICTU / Gebruiker Centraal / Toolkit Taal"
+msgstr "ICTU / User Needs Firs / Toolkit Language"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/ICTU/ictuwp-plugin-toolkit-taal"
+msgstr "https://github.com/ICTU/ictuwp-plugin-toolkit-taal"
+
+#. Description of the plugin/theme
+msgid "Plugin voor functionaliteit van de 'toolkit taal'-subsite"
+msgstr "Plugin for functionality of the 'toolkit language' subsite"
+
+#. Author of the plugin/theme
+msgid "Paul van Buuren / David Hund"
+msgstr "David Hund / Paul van Buuren"
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/ICTU/ictuwp-plugin-toolkit-taal/"
+msgstr "https://github.com/ICTU/ictuwp-plugin-toolkit-taal/"
+
+#, fuzzy
+#~ msgid "Paul van Buuren"
+#~ msgstr "Paul van Buuren"
