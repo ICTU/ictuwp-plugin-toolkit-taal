@@ -8,8 +8,8 @@
  * Plugin Name:         ICTU / Gebruiker Centraal / Toolkit Taal
  * Plugin URI:          https://github.com/ICTU/ictuwp-plugin-toolkit-taal
  * Description:         Plugin voor functionaliteit van de 'toolkit taal'-subsite
- * Version:             0.0.1
- * Version description: Initial version
+ * Version:             0.0.2
+ * Version description: Custom post type 'voorbeeld' added.
  * Author:              Paul van Buuren / David Hund
  * Author URI:          https://github.com/ICTU/ictuwp-plugin-toolkit-taal/
  * License:             GPL-2.0+
