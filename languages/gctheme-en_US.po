@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ICTU / Gebruiker Centraal / Toolkit Taal\n"
-"POT-Creation-Date: 2023-07-11 11:17+0200\n"
-"PO-Revision-Date: 2023-07-11 11:17+0200\n"
+"POT-Creation-Date: 2023-07-12 15:50+0200\n"
+"PO-Revision-Date: 2023-07-12 15:54+0200\n"
 "Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language: en_US\n"
@@ -30,127 +30,250 @@ msgctxt "label page template"
 msgid "[TT] voorbeeld-type"
 msgstr "[TT] example type"
 
-#: includes/register-voorbeeld_type-taxonomy.php:25
-#: includes/register-voorbeeld_type-taxonomy.php:26
+#: includes/register-voorbeeld_type-taxonomy.php:27
+#: includes/register-voorbeeld_type-taxonomy.php:29
+msgctxt "post type definition"
+msgid "Voorbeelden"
+msgstr "All examples"
+
+#: includes/register-voorbeeld_type-taxonomy.php:28
+#: includes/register-voorbeeld_type-taxonomy.php:30
+msgctxt "post type definition"
+msgid "Voorbeeld"
+msgstr "Example"
+
+#: includes/register-voorbeeld_type-taxonomy.php:31
+msgctxt "post type definition"
+msgid "Overzicht voorbeelden"
+msgstr "List examples"
+
+#: includes/register-voorbeeld_type-taxonomy.php:32
+msgctxt "post type definition"
+msgid "Eigenschappen voorbeeld"
+msgstr "Example properties"
+
+#: includes/register-voorbeeld_type-taxonomy.php:33
+msgctxt "post type definition"
+msgid "Parent Map:"
+msgstr "Parent example:"
+
+#: includes/register-voorbeeld_type-taxonomy.php:34
+msgctxt "post type definition"
+msgid "Alle voorbeelden"
+msgstr "All examples"
+
+#: includes/register-voorbeeld_type-taxonomy.php:35
+msgctxt "post type definition"
+msgid "Voorbeeld toevoegen"
+msgstr "Add example"
+
+#: includes/register-voorbeeld_type-taxonomy.php:36
+#: includes/register-voorbeeld_type-taxonomy.php:49
+msgctxt "post type definition"
+msgid "Toevoegen"
+msgstr "Add"
+
+#: includes/register-voorbeeld_type-taxonomy.php:37
+msgctxt "post type definition"
+msgid "Nieuw voorbeeld"
+msgstr "New example"
+
+#: includes/register-voorbeeld_type-taxonomy.php:38
+msgctxt "post type definition"
+msgid "Bewerk voorbeeld"
+msgstr "Edit example"
+
+#: includes/register-voorbeeld_type-taxonomy.php:39
+msgctxt "post type definition"
+msgid "Update voorbeeld"
+msgstr "Update example"
+
+#: includes/register-voorbeeld_type-taxonomy.php:40
+msgctxt "post type definition"
+msgid "Bekijk voorbeeld"
+msgstr "View example"
+
+#: includes/register-voorbeeld_type-taxonomy.php:41
+msgctxt "post type definition"
+msgid "Bekijk voorbeelden"
+msgstr "View examples"
+
+#: includes/register-voorbeeld_type-taxonomy.php:42
+msgctxt "post type definition"
+msgid "Zoek voorbeeld"
+msgstr "Find examples"
+
+#: includes/register-voorbeeld_type-taxonomy.php:43
+msgctxt "post type definition"
+msgid "Niet gevonden"
+msgstr "Not found"
+
+#: includes/register-voorbeeld_type-taxonomy.php:44
+msgctxt "post type definition"
+msgid "Niet gevonden in prullenbak"
+msgstr "Not found in trash"
+
+#: includes/register-voorbeeld_type-taxonomy.php:45
+msgctxt "post type definition"
+msgid "Uitgelichte afbeelding"
+msgstr "Featured image"
+
+#: includes/register-voorbeeld_type-taxonomy.php:46
+msgctxt "post type definition"
+msgid "Uitgelichte afbeelding toevoegen"
+msgstr "Add featured image"
+
+#: includes/register-voorbeeld_type-taxonomy.php:47
+msgctxt "post type definition"
+msgid "Uitgelichte afbeelding verwijderen"
+msgstr "Remove featured image"
+
+#: includes/register-voorbeeld_type-taxonomy.php:48
+msgctxt "post type definition"
+msgid "Gebruik als uitgelichte afbeelding"
+msgstr "Use as featured image"
+
+#: includes/register-voorbeeld_type-taxonomy.php:50
+msgctxt "post type definition"
+msgid "Bij dit voorbeeld geüpload"
+msgstr "Uploaded to this example"
+
+#: includes/register-voorbeeld_type-taxonomy.php:51
+msgctxt "post type definition"
+msgid "Overzicht"
+msgstr "List"
+
+#: includes/register-voorbeeld_type-taxonomy.php:52
+msgctxt "post type definition"
+msgid "Overzicht-menu"
+msgstr "List examples navigation"
+
+#: includes/register-voorbeeld_type-taxonomy.php:53
+msgctxt "post type definition"
+msgid "Filter lijst met voorbeelden"
+msgstr "Filter example list"
+
+#: includes/register-voorbeeld_type-taxonomy.php:87
+#: includes/register-voorbeeld_type-taxonomy.php:88
 msgctxt "Custom taxonomy labels definition"
 msgid "Voorbeeld-type"
 msgstr "Example type"
 
-#: includes/register-voorbeeld_type-taxonomy.php:27
+#: includes/register-voorbeeld_type-taxonomy.php:89
 msgctxt "Custom taxonomy labels definition"
 msgid "Zoek voorbeeld-types"
 msgstr "Find example types"
 
-#: includes/register-voorbeeld_type-taxonomy.php:28
+#: includes/register-voorbeeld_type-taxonomy.php:90
 msgctxt "Custom taxonomy labels definition"
 msgid "Populaire voorbeeld-types"
 msgstr "Popular example types"
 
-#: includes/register-voorbeeld_type-taxonomy.php:29
+#: includes/register-voorbeeld_type-taxonomy.php:91
 msgctxt "Custom taxonomy labels definition"
 msgid "Alle voorbeeld-types"
 msgstr "All example types"
 
-#: includes/register-voorbeeld_type-taxonomy.php:30
+#: includes/register-voorbeeld_type-taxonomy.php:92
 msgctxt "Custom taxonomy labels definition"
 msgid "Bewerk voorbeeld-type"
 msgstr "Edit example type"
 
-#: includes/register-voorbeeld_type-taxonomy.php:31
+#: includes/register-voorbeeld_type-taxonomy.php:93
 msgctxt "Custom taxonomy labels definition"
 msgid "Bekijk voorbeeld-type"
 msgstr "View example type"
 
-#: includes/register-voorbeeld_type-taxonomy.php:32
+#: includes/register-voorbeeld_type-taxonomy.php:94
 msgctxt "Custom taxonomy labels definition"
 msgid "Voorbeeld-type bijwerken"
 msgstr "Update example types"
 
-#: includes/register-voorbeeld_type-taxonomy.php:33
+#: includes/register-voorbeeld_type-taxonomy.php:95
 msgctxt "Custom taxonomy labels definition"
 msgid "Voeg nieuw voorbeeld-type toe"
 msgstr "Add new example type"
 
-#: includes/register-voorbeeld_type-taxonomy.php:34
+#: includes/register-voorbeeld_type-taxonomy.php:96
 msgctxt "Custom taxonomy labels definition"
 msgid "Nieuwe voorbeeld-type"
 msgstr "New example type"
 
-#: includes/register-voorbeeld_type-taxonomy.php:35
+#: includes/register-voorbeeld_type-taxonomy.php:97
 msgctxt "Custom taxonomy labels definition"
 msgid "Kommagescheiden voorbeeld-types"
 msgstr "Comma-separated example types"
 
-#: includes/register-voorbeeld_type-taxonomy.php:36
+#: includes/register-voorbeeld_type-taxonomy.php:98
 msgctxt "Custom taxonomy labels definition"
 msgid "Voorbeeld-types toevoegen of verwijderen"
 msgstr "Add or remove example type"
 
-#: includes/register-voorbeeld_type-taxonomy.php:37
+#: includes/register-voorbeeld_type-taxonomy.php:99
 msgctxt "Custom taxonomy labels definition"
 msgid "Kies uit de meest-gekozen voorbeeld-types"
 msgstr "Choose from the most-chosen example type"
 
-#: includes/register-voorbeeld_type-taxonomy.php:38
-#: includes/register-voorbeeld_type-taxonomy.php:39
+#: includes/register-voorbeeld_type-taxonomy.php:100
+#: includes/register-voorbeeld_type-taxonomy.php:101
 msgctxt "Custom taxonomy labels definition"
 msgid "Geen voorbeeld-types gevonden"
 msgstr "No example type found"
 
-#: includes/register-voorbeeld_type-taxonomy.php:40
+#: includes/register-voorbeeld_type-taxonomy.php:102
 msgctxt "Custom taxonomy labels definition"
 msgid "Navigatie door voorbeeld-type lijst"
 msgstr "Navigation by example-type list"
 
-#: includes/register-voorbeeld_type-taxonomy.php:41
+#: includes/register-voorbeeld_type-taxonomy.php:103
 msgctxt "Custom taxonomy labels definition"
 msgid "Voorbeeld-type lijst"
 msgstr "Example types list"
 
-#: includes/register-voorbeeld_type-taxonomy.php:42
+#: includes/register-voorbeeld_type-taxonomy.php:104
 msgctxt "Custom taxonomy labels definition"
 msgid "Voorbeeld-type Link"
 msgstr "Example type Link"
 
-#: includes/register-voorbeeld_type-taxonomy.php:43
+#: includes/register-voorbeeld_type-taxonomy.php:105
 msgctxt "Custom taxonomy labels definition"
-msgid "Een link naar een Voorbeeld-type"
-msgstr "A link to a example type"
+msgid "Een link naar een voorbeeld-type"
+msgstr ""
 
-#: includes/register-voorbeeld_type-taxonomy.php:44
+#: includes/register-voorbeeld_type-taxonomy.php:106
 msgctxt "Custom taxonomy labels definition"
 msgid "Voorbeeld-types"
 msgstr "Example types"
 
-#: includes/register-voorbeeld_type-taxonomy.php:45
+#: includes/register-voorbeeld_type-taxonomy.php:107
 msgctxt "Custom taxonomy labels definition"
-msgid "Terug naar Voorbeeld-types"
-msgstr "Back to example types"
+msgid "Terug naar voorbeeld-types"
+msgstr ""
 
-#: includes/register-voorbeeld_type-taxonomy.php:46
+#: includes/register-voorbeeld_type-taxonomy.php:108
 msgctxt "Custom taxonomy labels definition"
 msgid "Geen voorbeeld-types gevonden in de prullenbak"
 msgstr "No example types found in the trash"
 
-#: includes/register-voorbeeld_type-taxonomy.php:47
+#: includes/register-voorbeeld_type-taxonomy.php:109
 msgctxt "Custom taxonomy labels definition"
 msgid "Uitgelichte afbeelding"
 msgstr "Featured image"
 
-#: includes/register-voorbeeld_type-taxonomy.php:48
+#: includes/register-voorbeeld_type-taxonomy.php:110
 msgctxt "Custom taxonomy labels definition"
 msgid "Voorbeeld-type overzicht"
 msgstr "Example type overview"
 
-#: includes/register-voorbeeld_type-taxonomy.php:59
+#: includes/register-voorbeeld_type-taxonomy.php:121
 msgctxt "Custom taxonomy arguments definition"
 msgid "Voorbeeld-types"
 msgstr "Example types"
 
-#: includes/register-voorbeeld_type-taxonomy.php:60
+#: includes/register-voorbeeld_type-taxonomy.php:122
 msgctxt "Custom taxonomy arguments definition"
-msgid "Type Voorbeelden uit de Toolkit Taal van Gebruiker Centraal"
-msgstr "Example types from the User Needs First Language Toolkit"
+msgid "Type voorbeelden uit de Toolkit Taal van Gebruiker Centraal"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "ICTU / Gebruiker Centraal / Toolkit Taal"
@@ -171,6 +294,73 @@ msgstr "David Hund / Paul van Buuren"
 #. Author URI of the plugin/theme
 msgid "https://github.com/ICTU/ictuwp-plugin-toolkit-taal/"
 msgstr "https://github.com/ICTU/ictuwp-plugin-toolkit-taal/"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Not found"
+#~ msgstr "Not found"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Not found in Trash"
+#~ msgstr "Not found in Trash"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Featured Image"
+#~ msgstr "Featured Image"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Set featured image"
+#~ msgstr "Set featured image"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Remove featured image"
+#~ msgstr "Remove featured image"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Use as featured image"
+#~ msgstr "Use as featured image"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Insert into Map"
+#~ msgstr "Insert into Map"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Uploaded to this voorbeeld"
+#~ msgstr "Uploaded to this example"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Map list"
+#~ msgstr "Map list"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Maps list navigation"
+#~ msgstr "Maps list navigation"
+
+#, fuzzy
+#~ msgctxt "post type definition"
+#~ msgid "Filter voorbeeld list"
+#~ msgstr "Filter example list"
+
+#~ msgctxt "Custom taxonomy labels definition"
+#~ msgid "Een link naar een Voorbeeld-type"
+#~ msgstr "A link to a example type"
+
+#~ msgctxt "Custom taxonomy labels definition"
+#~ msgid "Terug naar Voorbeeld-types"
+#~ msgstr "Back to example types"
+
+#~ msgctxt "Custom taxonomy arguments definition"
+#~ msgid "Type Voorbeelden uit de Toolkit Taal van Gebruiker Centraal"
+#~ msgstr "Example types from the User Needs First Language Toolkit"
 
 #, fuzzy
 #~ msgid "Paul van Buuren"
