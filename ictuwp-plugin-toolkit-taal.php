@@ -26,12 +26,12 @@ if ( ! defined( 'WPINC' ) ) {
 // CONSTANTS:
 //========================================================================================================
 // `voorbeeld` custom post type
-defined( 'TT_EXAMPLE_CPT' ) 						or define( 'TT_EXAMPLE_CPT', 'voorbeeld' );
+defined( 'TT_EXAMPLE_CPT' )                         or define( 'TT_EXAMPLE_CPT', 'voorbeeld' );
 
 // `voorbeeld_type` taxonomy
-defined( 'TT_EXAMPLE_TYPE_TAX' ) 					or define( 'TT_EXAMPLE_TYPE_TAX', 'voorbeeld_type' );
-defined( 'TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE' ) 	or define( 'TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE', 'template-voorbeeld_type-overview.php' );
-defined( 'TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE' ) 	or define( 'TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE', 'template-voorbeeld_type-detail.php' );
+defined( 'TT_EXAMPLE_TYPE_TAX' )                    or define( 'TT_EXAMPLE_TYPE_TAX', 'voorbeeld_type' );
+defined( 'TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE' )  or define( 'TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE', 'template-voorbeeld_type-overview.php' );
+defined( 'TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE' )    or define( 'TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE', 'template-voorbeeld_type-detail.php' );
 
 //========================================================================================================
 // only this plugin should activate the TT_EXAMPLE_TYPE_TAX taxonomy
