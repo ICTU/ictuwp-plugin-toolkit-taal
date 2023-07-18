@@ -1,5 +1,6 @@
 <?php
 /**
+ * Custom Post Type: voorbeelden
  * Custom Taxonomy: voorbeeld_type
  * -  hierarchical (like 'category') but only for UI, used non-hierarchical
  *
@@ -9,9 +10,11 @@
  * @see https://developer.wordpress.org/reference/functions/get_taxonomy_labels/
  *
  * CONTENTS:
- * Set TT_EXAMPLE_TYPE_TAX taxonomy labels
- * Set TT_EXAMPLE_TYPE_TAX taxonomy arguments
- * Register TT_EXAMPLE_TYPE_TAX taxonomy
+ * - Set TT_EXAMPLE_CPT post type arguments and labels
+ * - Register TT_EXAMPLE_CPT post type
+ * - Set TT_EXAMPLE_TYPE_TAX taxonomy labels
+ * - Set TT_EXAMPLE_TYPE_TAX taxonomy arguments
+ * - Register TT_EXAMPLE_TYPE_TAX taxonomy
  *
  * Not used yet:
  * public function fn_ictu_example_get_post_example_type_terms() - Retreive voorbeeld Type terms with custom field data for Post
@@ -68,6 +71,7 @@ if ( ! post_type_exists( TT_EXAMPLE_CPT ) ) {
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
 		'show_in_nav_menus'   => true,
+		'menu_icon'           => 'dashicons-media-document',
 		'can_export'          => true,
 		'has_archive'         => true,
 		'exclude_from_search' => false,
