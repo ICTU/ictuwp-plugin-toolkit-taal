@@ -143,7 +143,8 @@ if ( ! taxonomy_exists( TT_EXAMPLE_TYPE_TAX ) && post_type_exists( TT_EXAMPLE_CP
 
 	// register the taxonomy with these post types
 	$post_types_with_example_type = [
-		TT_EXAMPLE_CPT
+		TT_EXAMPLE_CPT,
+		GC_INSTRUMENT_CPT
 		// 'post',
 		// 'page',
 		// 'podcast',
@@ -152,7 +153,6 @@ if ( ! taxonomy_exists( TT_EXAMPLE_TYPE_TAX ) && post_type_exists( TT_EXAMPLE_CP
 		// 'speaker',
 		// 'event',
 		// 'video_page',
-		// 'instrument',
 	];
 
 	// check if the post types exist
