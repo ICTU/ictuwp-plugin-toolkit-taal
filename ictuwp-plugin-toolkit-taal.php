@@ -8,8 +8,8 @@
  * Plugin Name:         ICTU / Gebruiker Centraal / Toolkit Taal
  * Plugin URI:          https://github.com/ICTU/ictuwp-plugin-toolkit-taal
  * Description:         Plugin voor functionaliteit van de 'toolkit taal'-subsite
- * Version:             0.0.4
- * Version description: Associate voorbeeld_type tax with Instrument CPT. Remove archive options.
+ * Version:             1.0.1
+ * Version description: Better filter breadcrumb list when viewing a single Voorbeeld CPT.
  * Author:              Paul van Buuren / David Hund
  * Author URI:          https://github.com/ICTU/ictuwp-plugin-toolkit-taal/
  * License:             GPL-2.0+
