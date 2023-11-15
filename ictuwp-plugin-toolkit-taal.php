@@ -26,12 +26,18 @@ if ( ! defined( 'WPINC' ) ) {
 // CONSTANTS:
 //========================================================================================================
 // `voorbeeld` custom post type
-defined( 'TT_EXAMPLE_CPT' )                         or define( 'TT_EXAMPLE_CPT', 'voorbeeld' );
+defined( 'TT_EXAMPLE_CPT' ) or define( 'TT_EXAMPLE_CPT', 'voorbeeld' );
 
 // `voorbeeld_type` taxonomy
-defined( 'TT_EXAMPLE_TYPE_TAX' )                    or define( 'TT_EXAMPLE_TYPE_TAX', 'voorbeeld_type' );
-defined( 'TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE' )  or define( 'TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE', 'template-voorbeeld_type-overview.php' );
-defined( 'TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE' )    or define( 'TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE', 'template-voorbeeld_type-detail.php' );
+defined( 'TT_EXAMPLE_TYPE_TAX' ) or define( 'TT_EXAMPLE_TYPE_TAX', 'voorbeeld_type' );
+defined( 'TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE' ) or define( 'TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE', 'template-voorbeelden.php' );
+defined( 'TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE' ) or define( 'TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE', 'template-voorbeeld_type-detail.php' );
+
+// page ID for overview of all example posts, used in customizr and enriching the breadcrumb
+defined( 'TT_EXAMPLE_CPT_OVERVIEW_PAGEID' ) or define( 'TT_EXAMPLE_CPT_OVERVIEW_PAGEID', 'tt_overview_voorbeelden_pageid' );
+
+// the TT_EXAMPLE_TYPE_TAX taxonomy is also registered for this post type
+defined( 'GC_INSTRUMENT_CPT' )  or define( 'GC_INSTRUMENT_CPT', 'instrument' );
 
 //========================================================================================================
 // only this plugin should activate the TT_EXAMPLE_TYPE_TAX taxonomy
@@ -167,7 +173,7 @@ if ( ! class_exists( 'ICTU_GC_toolkit_taal' ) ) :
 				// Get template name; this will only work for pages, obviously
 				$page_template = get_post_meta( $post->ID, '_wp_page_template', true );
 
-				if ( ( TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE === $page_template ) || ( TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE === $page_template ) ) {
+				if ( TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE === $page_template ) {
 					// these names are added by this plugin, so we return
 					// the actual file path for this template
 					$file = $pluginpath . $page_template;
@@ -209,7 +215,28 @@ if ( ! class_exists( 'ICTU_GC_toolkit_taal' ) ) :
 		 */
 		public function yoast_filter_breadcrumb( $links ) {
 
-			if ( is_tax( TT_EXAMPLE_TYPE_TAX ) ) {
+			if ( is_tax( TT_EXAMPLE_TYPE_TAX ) || is_singular( TT_EXAMPLE_CPT ) ) {
+				$example_type_overview_page_id = $this->get_example_type_overview_page();
+				if ( $example_type_overview_page_id ) {
+					$taxonomy_link = array(
+						'url'  => get_permalink( $example_type_overview_page_id ),
+						'text' => get_the_title( $example_type_overview_page_id )
+					);
+				}
+			}
+
+			if ( is_singular( TT_EXAMPLE_CPT ) ) {
+
+				if ( $example_type_overview_page_id ) {
+					// Use this page as TT_EXAMPLE_TYPE_TAX term parent in the breadcrumb
+					// If not available,
+					// - [1] Do not display root
+					// - [2] OR fall back to Taxonomy Rewrite
+
+					array_splice( $links, - 1, 0, array( $taxonomy_link ) );
+
+				}
+			} elseif ( is_tax( TT_EXAMPLE_TYPE_TAX ) ) {
 				// this filter is only for terms in TT_EXAMPLE_TYPE_TAX taxonomy
 
 				$term = get_queried_object();
@@ -219,32 +246,16 @@ if ( ! class_exists( 'ICTU_GC_toolkit_taal' ) ) :
 
 				if ( ! $term->parent ) {
 
-					$example_type_overview_page_id = $this->get_example_type_overview_page();
-
 					if ( $example_type_overview_page_id ) {
 						// Use this page as TT_EXAMPLE_TYPE_TAX term parent in the breadcrumb
 						// If not available,
 						// - [1] Do not display root
 						// - [2] OR fall back to Taxonomy Rewrite
 
-						$taxonomy_link = array(
-							'url'  => get_permalink( $example_type_overview_page_id ),
-							'text' => get_the_title( $example_type_overview_page_id )
-						);
 						array_splice( $links, - 1, 0, array( $taxonomy_link ) );
 
 					} else {
 						// [1] .. do nothing...
-
-						// [2] OR .. use Taxonomy Rewrite as root
-
-						// $taxonomy      = get_taxonomy( TT_EXAMPLE_TYPE_TAX );
-						// $taxonomy_link = [
-						// 	'url' => get_home_url() . '/' . $taxonomy->rewrite['slug'],
-						// 	'text' => $taxonomy->labels->archives,
-						// 	'term_id' => get_queried_object_id(),
-						// ];
-						// array_splice( $links, -1, 0, [$taxonomy_link] );
 					}
 				}
 			}
@@ -255,7 +266,9 @@ if ( ! class_exists( 'ICTU_GC_toolkit_taal' ) ) :
 
 		/**
 		 * Retrieve a page that is the TT_EXAMPLE_TYPE_TAX overview page. This
-		 * page shows all available TT_EXAMPLE_TYPE_TAX terms
+		 * page should exist in the theme folder with the file name TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE
+		 * First we try to retrieve the page ID from the theme settings in the customizer. If no such
+		 * settings exist we check if a page is published with the correct template.
 		 *
 		 * @in: $args (array)
 		 *
@@ -267,24 +280,27 @@ if ( ! class_exists( 'ICTU_GC_toolkit_taal' ) ) :
 
 			$return = 0;
 
-			// TODO: discuss if we need to make this page a site setting
-			// there is no technical way to limit the number of pages with
-			// template TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE, so the page we find may not be
-			// the exact desired page for in the breadcrumb.
-			//
-			// Try and find 1 Page
-			// with the TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE template...
-			$page_template_query_args = array(
-				'number'      => 1,
-				'sort_column' => 'post_date',
-				'sort_order'  => 'DESC',
-				'meta_key'    => '_wp_page_template',
-				'meta_value'  => TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE
-			);
-			$overview_page            = get_pages( $page_template_query_args );
+			if ( get_theme_mod( TT_EXAMPLE_CPT_OVERVIEW_PAGEID ) ) {
+				// Page ID is available from the theme settings, so retrieve it
+				$return = get_theme_mod( TT_EXAMPLE_CPT_OVERVIEW_PAGEID );
+			} else {
+				// No page ID from the theme settings.
+				// So we check if a page is published having the appropriate template. If such
+				// a page exists we save this page ID to the theme settings
+				$page_template_query_args = array(
+					'number'      => 1,
+					'sort_column' => 'post_date',
+					'sort_order'  => 'DESC',
+					'meta_key'    => '_wp_page_template',
+					'meta_value'  => TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE
+				);
+				$overview_page            = get_pages( $page_template_query_args );
+				if ( $overview_page && isset( $overview_page[0]->ID ) ) {
+					// the correct page exists, so we save it
+					$return = $overview_page[0]->ID;
+					set_theme_mod( TT_EXAMPLE_CPT_OVERVIEW_PAGEID, $overview_page[0]->ID );
+				}
 
-			if ( $overview_page && isset( $overview_page[0]->ID ) ) {
-				$return = $overview_page[0]->ID;
 			}
 
 			return $return;
@@ -312,24 +328,6 @@ if ( defined( TT_EXAMPLE_TYPE_TAX ) or taxonomy_exists( TT_EXAMPLE_TYPE_TAX ) ) 
 		load_plugin_textdomain( 'gctheme', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 	}
-
-}
-
-//========================================================================================================
-
-/**
- * Returns array of allowed page templates
- *
- * @return array with extra templates
- */
-function add_templates() {
-
-	$return_array = array(
-		TT_EXAMPLE_TYPE_TAX_OVERVIEW_TEMPLATE => _x( '[TT] alle voorbeeld-types', 'label page template', 'gctheme' ),
-		TT_EXAMPLE_TYPE_TAX_DETAIL_TEMPLATE   => _x( '[TT] voorbeeld-type', 'label page template', 'gctheme' )
-	);
-
-	return $return_array;
 
 }
 
