@@ -3,7 +3,7 @@ Plugin voor functionaliteit van de 'toolkit taal'-subsite
 
 
 ## Current version:
-* 0.0.4 - Associate voorbeeld_type tax with Instrument CPT. Remove archive options.
+* 1.0.1 - Better filter breadcrumb list when viewing a single Voorbeeld CPT.
 
 
 ## To do
