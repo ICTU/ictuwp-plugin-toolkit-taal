@@ -30,7 +30,7 @@ defined( 'TT_EXAMPLE_CPT' ) or define( 'TT_EXAMPLE_CPT', 'voorbeeld' );
 
 // `voorbeeld_type` taxonomy
 defined( 'TT_EXAMPLE_TYPE_TAX' ) or define( 'TT_EXAMPLE_TYPE_TAX', 'voorbeeld_type' );
-defined( 'TT_PAGETEMPLATE_OVERVIEW_EXAMPLE_CPT' ) or define( 'TT_PAGETEMPLATE_OVERVIEW_EXAMPLE_CPT', 'template-voorbeelden.php' );
+defined( 'TT_EXAMPLE_CPT_OVERVIEW_TEMPLATE' ) or define( 'TT_EXAMPLE_CPT_OVERVIEW_TEMPLATE', 'template-voorbeelden.php' );
 
 // page ID for overview of all example posts, used in customizr and enriching the breadcrumb
 defined( 'TT_EXAMPLE_CPT_OVERVIEW_PAGEID' ) or define( 'TT_EXAMPLE_CPT_OVERVIEW_PAGEID', 'tt_overview_voorbeelden_pageid' );
@@ -137,7 +137,7 @@ if ( ! class_exists( 'ICTU_GC_toolkit_taal' ) ) :
 
 		/**
 		 * Retrieve a page that is the TT_EXAMPLE_TYPE_TAX overview page. This
-		 * page should exist in the theme folder with the file name TT_PAGETEMPLATE_OVERVIEW_EXAMPLE_CPT
+		 * page should exist in the theme folder with the file name TT_EXAMPLE_CPT_OVERVIEW_TEMPLATE
 		 * First we try to retrieve the page ID from the theme settings in the customizer. If no such
 		 * settings exist we check if a page is published with the correct template.
 		 *
@@ -163,7 +163,7 @@ if ( ! class_exists( 'ICTU_GC_toolkit_taal' ) ) :
 					'sort_column' => 'post_date',
 					'sort_order'  => 'DESC',
 					'meta_key'    => '_wp_page_template',
-					'meta_value'  => TT_PAGETEMPLATE_OVERVIEW_EXAMPLE_CPT
+					'meta_value'  => TT_EXAMPLE_CPT_OVERVIEW_TEMPLATE
 				);
 				$overview_page            = get_pages( $page_template_query_args );
 				if ( $overview_page && isset( $overview_page[0]->ID ) ) {
